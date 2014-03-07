@@ -1,15 +1,4 @@
-puppet-yamlout
-==============
-
-Puppet ressource to easy write yaml file from hash
-
-Dependencies: none
-
-Usage:
-------
-
-Example for database.yml
-
+import "../manifests/*.pp"
 $data = {
   'production' => {
     'adapter'           => 'mysql2',
@@ -33,14 +22,6 @@ $data = {
   }
 }
 
-
-yamlout {'database.yml':
-	confighash       => $data,
+yamlout{'/tmp/database.yml':
+	confighash          => $data,
 }
-
-Test it:
---------
-
-go to the test dir and run
-
-puppet apply database_yaml.pp
