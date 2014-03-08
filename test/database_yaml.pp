@@ -23,5 +23,5 @@ $data = {
 }
 
 yamlout{'/tmp/database.yml':
-	confighash          => $data,
+	data                => $data,
 }

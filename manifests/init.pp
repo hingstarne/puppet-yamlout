@@ -14,16 +14,16 @@
 #
 
 define yamlout (
-	$ensure     = present,
+    $ensure     = present,
     $filename	= $name,
-    $confighash,
+    $data,
     $owner      = undef,
     $group      = undef,
     $mode       = undef,
 ){
   file {"${filename}":
-	ensure          => $ensure,
-	content         => inline_template('<%= @confighash.to_yaml %>'),
+    ensure          => $ensure,
+	content         => inline_template('<%= @data.to_yaml %>'),
     owner           => $owner,
     group           => $group,
     mode            => $mode,
