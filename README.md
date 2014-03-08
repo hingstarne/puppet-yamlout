@@ -35,7 +35,7 @@ $data = {
 
 
 yamlout {'database.yml':
-	confighash       => $data,
+	data                => $data,
 }
 
 Test it:
